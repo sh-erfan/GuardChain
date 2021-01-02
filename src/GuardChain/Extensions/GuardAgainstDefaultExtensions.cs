@@ -30,6 +30,11 @@ namespace GuardChain.Extensions
             return Chain.Next(guard);
         }
 
+        public static IChainableGuardClause<TInput> Default<TException, TInput>(this IGuardClause<TInput> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.Default(typeof(TException), customExceptionArgs);
+        }
+
         #endregion
     }
 }

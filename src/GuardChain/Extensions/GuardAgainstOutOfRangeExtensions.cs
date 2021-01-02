@@ -49,6 +49,11 @@ namespace GuardChain.Extensions
         }
 
 
+        public static IChainableGuardClause<TInput> OutOfRange<TException, TInput>(this IGuardClause<TInput> guard, TInput rangeFrom, TInput rangeTo, params object[] customTypeArgs) where TException : Exception
+        {
+            return guard.OutOfRange<TInput>(rangeFrom, rangeTo, typeof(TException), customTypeArgs);
+        }
+
         #endregion
 
         #region short
@@ -63,8 +68,12 @@ namespace GuardChain.Extensions
             return guard.OutOfRange<short>(rangeFrom, rangeTo, customExceptionType, customExceptionArgs);
         }
 
-        #endregion
+        public static IChainableGuardClause<short> OutOfRange<TException>(this IGuardClause<short> guard, short rangeFrom, short rangeTo, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.OutOfRange<short>(rangeFrom, rangeTo, typeof(TException), customExceptionArgs);
+        }
 
+        #endregion
 
         #region int
 
@@ -76,6 +85,11 @@ namespace GuardChain.Extensions
         public static IChainableGuardClause<int> OutOfRange(this IGuardClause<int> guard, int rangeFrom, int rangeTo, Type customExceptionType, params object[] customExceptionArgs)
         {
             return guard.OutOfRange<int>(rangeFrom, rangeTo, customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<int> OutOfRange<TException>(this IGuardClause<int> guard, int rangeFrom, int rangeTo, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.OutOfRange<int>(rangeFrom, rangeTo, typeof(TException), customExceptionArgs);
         }
 
         #endregion
@@ -92,6 +106,11 @@ namespace GuardChain.Extensions
             return guard.OutOfRange<long>(rangeFrom, rangeTo, customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<long> OutOfRange<TException>(this IGuardClause<long> guard, long rangeFrom, long rangeTo, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.OutOfRange<long>(rangeFrom, rangeTo, typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region decimal
@@ -104,6 +123,11 @@ namespace GuardChain.Extensions
         public static IChainableGuardClause<decimal> OutOfRange(this IGuardClause<decimal> guard, decimal rangeFrom, decimal rangeTo, Type customExceptionType, params object[] customExceptionArgs)
         {
             return guard.OutOfRange<decimal>(rangeFrom, rangeTo, customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<decimal> OutOfRange<TException>(this IGuardClause<decimal> guard, decimal rangeFrom, decimal rangeTo, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.OutOfRange<decimal>(rangeFrom, rangeTo, typeof(TException), customExceptionArgs);
         }
 
         #endregion
@@ -120,6 +144,11 @@ namespace GuardChain.Extensions
             return guard.OutOfRange<double>(rangeFrom, rangeTo, customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<double> OutOfRange<TException>(this IGuardClause<double> guard, double rangeFrom, double rangeTo, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.OutOfRange<double>(rangeFrom, rangeTo, typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region float
@@ -134,6 +163,10 @@ namespace GuardChain.Extensions
             return guard.OutOfRange<float>(rangeFrom, rangeTo, customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<float> OutOfRange<TException>(this IGuardClause<float> guard, float rangeFrom, float rangeTo, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.OutOfRange<float>(rangeFrom, rangeTo, typeof(TException), customExceptionArgs);
+        }
         #endregion
 
         #region DateTime
@@ -148,8 +181,12 @@ namespace GuardChain.Extensions
             return guard.OutOfRange<DateTime>(rangeFrom, rangeTo, customExceptionType, customExceptionArgs);
         }
 
-        #endregion
+        public static IChainableGuardClause<DateTime> OutOfRange<TException>(this IGuardClause<DateTime> guard, DateTime rangeFrom, DateTime rangeTo, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.OutOfRange<DateTime>(rangeFrom, rangeTo, typeof(TException), customExceptionArgs);
+        }
 
+        #endregion
 
         #region Enum
 
@@ -173,6 +210,11 @@ namespace GuardChain.Extensions
             return Chain.Next(guard);
         }
 
+        public static IChainableGuardClause<TInput> OutOfRange<TException, TInput>(this IGuardClause<TInput> guard,  params object[] customExceptionArgs) where TInput : struct, Enum where TException : Exception
+        {
+            return guard.OutOfRange<TInput>(typeof(TException), customExceptionArgs);
+        }
+
 
         public static IChainableGuardClause<int> OutOfRange<TInput>(this IGuardClause<int> guard) where TInput : struct, Enum
         {
@@ -194,8 +236,12 @@ namespace GuardChain.Extensions
             return Chain.Next(guard);
         }
 
-        #endregion
+        public static IChainableGuardClause<int> OutOfRange<TException, TInput>(this IGuardClause<int> guard, params object[] customExceptionArgs) where TInput : struct, Enum where TException :Exception
+        {
+            return guard.OutOfRange<TInput>(typeof(TException), customExceptionArgs);
+        }
 
+        #endregion
 
         #region Sql DateTime
 
@@ -213,6 +259,11 @@ namespace GuardChain.Extensions
             const long sqlMaxDateTicks = 3155378975999970000;// max date is 12/31/9999 is sql
 
             return guard.OutOfRange<DateTime>(new DateTime(sqlMinDateTicks), new DateTime(sqlMaxDateTicks), customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<DateTime> OutOfSqlDateRange<TException>(this IGuardClause<DateTime> guard, DateTime rangeFrom, DateTime rangeTo, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.OutOfRange<DateTime>(rangeFrom, rangeTo, typeof(TException), customExceptionArgs);
         }
 
         #endregion

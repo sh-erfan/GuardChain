@@ -29,6 +29,11 @@ namespace GuardChain.Extensions
             return Chain.Next(guard);
         }
 
+        public static IChainableGuardClause<TInput> LessThan<TException, TInput>(this IGuardClause<TInput> guard, TInput limit, params object[] customExceptionArgs) where TInput : struct, IComparable where TException : Exception
+        {
+            return guard.LessThan<TInput>(limit, typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region short 
@@ -41,6 +46,11 @@ namespace GuardChain.Extensions
         public static IChainableGuardClause<short> LessThan(this IGuardClause<short> guard, short limit, Type customExceptionType, params object[] customExceptionArgs)
         {
             return guard.LessThan<short>(limit, customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<short> LessThan<TException>(this IGuardClause<short> guard, short limit, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.LessThan<short>(limit, typeof(TException), customExceptionArgs);
         }
 
         #endregion
@@ -57,6 +67,11 @@ namespace GuardChain.Extensions
             return guard.LessThan<int>(limit, customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<int> LessThan<TException>(this IGuardClause<int> guard, int limit, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.LessThan<int>(limit, typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region long 
@@ -69,6 +84,11 @@ namespace GuardChain.Extensions
         public static IChainableGuardClause<long> LessThan(this IGuardClause<long> guard, long limit, Type customExceptionType, params object[] customExceptionArgs)
         {
             return guard.LessThan<long>(limit, customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<long> LessThan<TException>(this IGuardClause<long> guard, long limit, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.LessThan<long>(limit, typeof(TException), customExceptionArgs);
         }
 
         #endregion
@@ -85,6 +105,11 @@ namespace GuardChain.Extensions
             return guard.LessThan<decimal>(limit, customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<decimal> LessThan<TException>(this IGuardClause<decimal> guard, decimal limit, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.LessThan<decimal>(limit, typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region double 
@@ -99,6 +124,11 @@ namespace GuardChain.Extensions
             return guard.LessThan<double>(limit, customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<double> LessThan<TException>(this IGuardClause<double> guard, double limit, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.LessThan<double>(limit, typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region float 
@@ -111,6 +141,11 @@ namespace GuardChain.Extensions
         public static IChainableGuardClause<float> LessThan(this IGuardClause<float> guard, float limit, Type customExceptionType, params object[] customExceptionArgs)
         {
             return guard.LessThan<float>(limit, customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<float> LessThan<TException>(this IGuardClause<float> guard, float limit, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.LessThan<float>(limit, typeof(TException), customExceptionArgs);
         }
 
         #endregion

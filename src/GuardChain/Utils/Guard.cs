@@ -51,5 +51,10 @@ namespace GuardChain.Utils
             // Execution will never be reached here/
             throw new GuardDefaultException($"Unable to create instance of {customExceptionType.Name} for unknown reason");
         }
+
+        public static void ThrowCustomException<TException>( params object[] customExceptionArgs) where TException : Exception
+        {
+            ThrowCustomException(typeof(TException), customExceptionArgs);
+        }
     }
 }

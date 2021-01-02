@@ -29,6 +29,11 @@ namespace GuardChain.Extensions
             return Chain.Next(guard);
         }
 
+        public static IChainableGuardClause<TInput> Positive<TException, TInput>(this IGuardClause<TInput> guard, params object[] customExceptionArgs) where TInput : struct, IComparable where TException : Exception
+        {
+            return guard.Positive<TInput>(typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region short 
@@ -41,6 +46,11 @@ namespace GuardChain.Extensions
         public static IChainableGuardClause<short> Positive(this IGuardClause<short> guard, Type customExceptionType, params object[] customExceptionArgs)
         {
             return guard.Positive<short>(customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<short> Positive<TException>(this IGuardClause<short> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.Positive<short>(typeof(TException), customExceptionArgs);
         }
 
         #endregion
@@ -57,6 +67,11 @@ namespace GuardChain.Extensions
             return guard.Positive<int>(customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<int> Positive<TException>(this IGuardClause<int> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.Positive<int>(typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region long 
@@ -69,6 +84,11 @@ namespace GuardChain.Extensions
         public static IChainableGuardClause<long> Positive(this IGuardClause<long> guard, Type customExceptionType, params object[] customExceptionArgs)
         {
             return guard.Positive<long>(customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<long> Positive<TException>(this IGuardClause<long> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.Positive<long>(typeof(TException), customExceptionArgs);
         }
 
         #endregion
@@ -85,6 +105,11 @@ namespace GuardChain.Extensions
             return guard.Positive<decimal>(customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<decimal> Positive<TException>(this IGuardClause<decimal> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.Positive<decimal>(typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region double 
@@ -99,6 +124,11 @@ namespace GuardChain.Extensions
             return guard.Positive<double>(customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<double> Positive<TException>(this IGuardClause<double> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.Positive<double>(typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region float 
@@ -111,6 +141,11 @@ namespace GuardChain.Extensions
         public static IChainableGuardClause<float> Positive(this IGuardClause<float> guard, Type customExceptionType, params object[] customExceptionArgs)
         {
             return guard.Positive<float>(customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<float> Positive<TException>(this IGuardClause<float> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.Positive<float>(typeof(TException), customExceptionArgs);
         }
 
         #endregion

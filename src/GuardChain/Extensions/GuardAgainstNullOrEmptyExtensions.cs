@@ -35,6 +35,11 @@ namespace GuardChain.Extensions
             return Chain.Next(guard);
         }
 
+        public static IChainableGuardClause<string> NullOrEmpty<TException>(this IGuardClause<string> guard,  params object[] customExceptionArgs) where TException: Exception
+        {
+            return guard.NullOrEmpty(typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region Guid
@@ -63,6 +68,11 @@ namespace GuardChain.Extensions
             return Chain.Next(guard);
         }
 
+        public static IChainableGuardClause<Guid> NullOrEmpty<TException>(this IGuardClause<Guid> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.NullOrEmpty(typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region IEnumerable<TInput>
@@ -89,6 +99,11 @@ namespace GuardChain.Extensions
             }
 
             return Chain.Next(guard);
+        }
+
+        public static IChainableGuardClause<IEnumerable<TInput>> NullOrEmpty<TException, TInput>(this IGuardClause<IEnumerable<TInput>> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.NullOrEmpty(typeof(TException), customExceptionArgs);
         }
 
         #endregion

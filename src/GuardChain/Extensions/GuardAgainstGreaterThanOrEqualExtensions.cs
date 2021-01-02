@@ -29,6 +29,11 @@ namespace GuardChain.Extensions
             return Chain.Next(guard);
         }
 
+        public static IChainableGuardClause<TInput> GreaterThanOrEqual<TException, TInput>(this IGuardClause<TInput> guard, TInput limit, params object[] customExceptionArgs) where TInput : struct, IComparable where TException : Exception
+        {
+            return guard.GreaterThanOrEqual(limit, typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region short 
@@ -41,6 +46,11 @@ namespace GuardChain.Extensions
         public static IChainableGuardClause<short> GreaterThanOrEqual(this IGuardClause<short> guard, short limit, Type customExceptionType, params object[] customExceptionArgs)
         {
             return guard.GreaterThanOrEqual<short>(limit, customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<short> GreaterThanOrEqual<TException>(this IGuardClause<short> guard, short limit, params object[] customExceptionArgs)  where TException : Exception
+        {
+            return guard.GreaterThanOrEqual<short>(limit, typeof(TException), customExceptionArgs);
         }
 
         #endregion
@@ -57,6 +67,11 @@ namespace GuardChain.Extensions
             return guard.GreaterThanOrEqual<int>(limit, customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<int> GreaterThanOrEqual<TException>(this IGuardClause<int> guard, int limit, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.GreaterThanOrEqual<int>(limit, typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region long 
@@ -69,6 +84,11 @@ namespace GuardChain.Extensions
         public static IChainableGuardClause<long> GreaterThanOrEqual(this IGuardClause<long> guard, long limit, Type customExceptionType, params object[] customExceptionArgs)
         {
             return guard.GreaterThanOrEqual<long>(limit, customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<long> GreaterThanOrEqual<TException>(this IGuardClause<long> guard, long limit, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.GreaterThanOrEqual<long>(limit, typeof(TException), customExceptionArgs);
         }
 
         #endregion
@@ -85,6 +105,11 @@ namespace GuardChain.Extensions
             return guard.GreaterThanOrEqual<decimal>(limit, customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<decimal> GreaterThanOrEqual<TException>(this IGuardClause<decimal> guard, decimal limit, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.GreaterThanOrEqual<decimal>(limit, typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region double 
@@ -99,6 +124,11 @@ namespace GuardChain.Extensions
             return guard.GreaterThanOrEqual<double>(limit, customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<double> GreaterThanOrEqual<TException>(this IGuardClause<double> guard, double limit, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.GreaterThanOrEqual<double>(limit, typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region float 
@@ -111,6 +141,11 @@ namespace GuardChain.Extensions
         public static IChainableGuardClause<float> GreaterThanOrEqual(this IGuardClause<float> guard, float limit, Type customExceptionType, params object[] customExceptionArgs)
         {
             return guard.GreaterThanOrEqual<float>(limit, customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<float> GreaterThanOrEqual<TException>(this IGuardClause<float> guard, float limit, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.GreaterThanOrEqual<float>(limit, typeof(TException), customExceptionArgs);
         }
 
         #endregion

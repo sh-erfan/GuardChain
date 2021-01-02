@@ -29,6 +29,11 @@ namespace GuardChain.Extensions
             return Chain.Next(guard);
         }
 
+        public static IChainableGuardClause<TInput> Zero<TException, TInput>(this IGuardClause<TInput> guard, params object[] customExceptionArgs) where TInput : struct, IComparable where TException : Exception
+        {
+            return guard.Zero<TInput>(typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region short 
@@ -41,6 +46,11 @@ namespace GuardChain.Extensions
         public static IChainableGuardClause<short> Zero(this IGuardClause<short> guard, Type customExceptionType, params object[] customExceptionArgs)
         {
             return guard.Zero<short>(customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<short> Zero<TException>(this IGuardClause<short> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.Zero<short>(typeof(TException), customExceptionArgs);
         }
 
         #endregion
@@ -57,6 +67,11 @@ namespace GuardChain.Extensions
             return guard.Zero<int>(customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<int> Zero<TException>(this IGuardClause<int> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.Zero<int>(typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region long 
@@ -69,6 +84,11 @@ namespace GuardChain.Extensions
         public static IChainableGuardClause<long> Zero(this IGuardClause<long> guard, Type customExceptionType, params object[] customExceptionArgs)
         {
             return guard.Zero<long>(customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<long> Zero<TException>(this IGuardClause<long> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.Zero<long>(typeof(TException), customExceptionArgs);
         }
 
         #endregion
@@ -85,6 +105,11 @@ namespace GuardChain.Extensions
             return guard.Zero<decimal>(customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<decimal> Zero<TException>(this IGuardClause<decimal> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.Zero<decimal>(typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region double 
@@ -99,6 +124,11 @@ namespace GuardChain.Extensions
             return guard.Zero<double>(customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<double> Zero<TException>(this IGuardClause<double> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.Zero<double>(typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region float 
@@ -111,6 +141,11 @@ namespace GuardChain.Extensions
         public static IChainableGuardClause<float> Zero(this IGuardClause<float> guard, Type customExceptionType, params object[] customExceptionArgs)
         {
             return guard.Zero<float>(customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<float> Zero<TException>(this IGuardClause<float> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.Zero<float>(typeof(TException), customExceptionArgs);
         }
 
         #endregion

@@ -29,6 +29,11 @@ namespace GuardChain.Extensions
             return Chain.Next(guard);
         }
 
+        public static IChainableGuardClause<TInput> PositiveOrZero<TException, TInput>(this IGuardClause<TInput> guard, params object[] customExceptionArgs) where TInput : struct, IComparable where TException : Exception
+        {
+            return guard.PositiveOrZero<TInput>(typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region short 
@@ -41,6 +46,11 @@ namespace GuardChain.Extensions
         public static IChainableGuardClause<short> PositiveOrZero(this IGuardClause<short> guard, Type customExceptionType, params object[] customExceptionArgs)
         {
             return guard.PositiveOrZero<short>(customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<short> PositiveOrZero<TException>(this IGuardClause<short> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.PositiveOrZero<short>(typeof(TException), customExceptionArgs);
         }
 
         #endregion
@@ -57,6 +67,11 @@ namespace GuardChain.Extensions
             return guard.PositiveOrZero<int>(customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<int> PositiveOrZero<TException>(this IGuardClause<int> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.PositiveOrZero<int>(typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region long 
@@ -69,6 +84,11 @@ namespace GuardChain.Extensions
         public static IChainableGuardClause<long> PositiveOrZero(this IGuardClause<long> guard, Type customExceptionType, params object[] customExceptionArgs)
         {
             return guard.PositiveOrZero<long>(customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<long> PositiveOrZero<TException>(this IGuardClause<long> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.PositiveOrZero<long>(typeof(TException), customExceptionArgs);
         }
 
         #endregion
@@ -85,6 +105,11 @@ namespace GuardChain.Extensions
             return guard.PositiveOrZero<decimal>(customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<decimal> PositiveOrZero<TException>(this IGuardClause<decimal> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.PositiveOrZero<decimal>(typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region double 
@@ -99,6 +124,11 @@ namespace GuardChain.Extensions
             return guard.PositiveOrZero<double>(customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<double> PositiveOrZero<TException>(this IGuardClause<double> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.PositiveOrZero<double>(typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region float 
@@ -111,6 +141,11 @@ namespace GuardChain.Extensions
         public static IChainableGuardClause<float> PositiveOrZero(this IGuardClause<float> guard, Type customExceptionType, params object[] customExceptionArgs)
         {
             return guard.PositiveOrZero<float>(customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<float> PositiveOrZero<TException>(this IGuardClause<float> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.PositiveOrZero<float>(typeof(TException), customExceptionArgs);
         }
 
         #endregion

@@ -29,6 +29,11 @@ namespace GuardChain.Extensions
             return Chain.Next(guard);
         }
 
+        public static IChainableGuardClause<TInput> LessThanOrEqual<TException, TInput>(this IGuardClause<TInput> guard, TInput limit, params object[] customExceptionArgs) where TInput : struct, IComparable where TException: Exception
+        {
+            return guard.LessThanOrEqual<TInput>(limit, typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region short 
@@ -41,6 +46,11 @@ namespace GuardChain.Extensions
         public static IChainableGuardClause<short> LessThanOrEqual(this IGuardClause<short> guard, short limit, Type customExceptionType, params object[] customExceptionArgs)
         {
             return guard.LessThanOrEqual<short>(limit, customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<short> LessThanOrEqual<TException>(this IGuardClause<short> guard, short limit, params object[] customExceptionArgs) where TException: Exception
+        {
+            return guard.LessThanOrEqual<short>(limit, typeof(TException), customExceptionArgs);
         }
 
         #endregion
@@ -57,6 +67,11 @@ namespace GuardChain.Extensions
             return guard.LessThanOrEqual<int>(limit, customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<int> LessThanOrEqual<TException>(this IGuardClause<int> guard, int limit, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.LessThanOrEqual<int>(limit, typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region long 
@@ -69,6 +84,11 @@ namespace GuardChain.Extensions
         public static IChainableGuardClause<long> LessThanOrEqual(this IGuardClause<long> guard, long limit, Type customExceptionType, params object[] customExceptionArgs)
         {
             return guard.LessThanOrEqual<long>(limit, customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<long> LessThanOrEqual<TException>(this IGuardClause<long> guard, long limit, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.LessThanOrEqual<long>(limit, typeof(TException), customExceptionArgs);
         }
 
         #endregion
@@ -85,6 +105,11 @@ namespace GuardChain.Extensions
             return guard.LessThanOrEqual<decimal>(limit, customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<decimal> LessThanOrEqual<TException>(this IGuardClause<decimal> guard, decimal limit, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.LessThanOrEqual<decimal>(limit, typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region double 
@@ -99,6 +124,11 @@ namespace GuardChain.Extensions
             return guard.LessThanOrEqual<double>(limit, customExceptionType, customExceptionArgs);
         }
 
+        public static IChainableGuardClause<double> LessThanOrEqual<TException>(this IGuardClause<double> guard, double limit, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.LessThanOrEqual<double>(limit, typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
         #region float 
@@ -111,6 +141,11 @@ namespace GuardChain.Extensions
         public static IChainableGuardClause<float> LessThanOrEqual(this IGuardClause<float> guard, float limit, Type customExceptionType, params object[] customExceptionArgs)
         {
             return guard.LessThanOrEqual<float>(limit, customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<float> LessThanOrEqual<TException>(this IGuardClause<float> guard, float limit, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.LessThanOrEqual<float>(limit, typeof(TException), customExceptionArgs);
         }
 
         #endregion

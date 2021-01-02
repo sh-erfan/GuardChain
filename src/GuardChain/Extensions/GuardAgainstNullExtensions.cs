@@ -47,6 +47,11 @@ namespace GuardChain.Extensions
             return Chain.Next(guard);
         }
 
+        public static IChainableGuardClause<TInput> Null<TException, TInput>(this IGuardClause<TInput> guard, params object[] customExceptionArgs) where TException: Exception
+        {
+           return guard.Null(typeof(TException), customExceptionArgs);
+        }
+
         #endregion
 
     }

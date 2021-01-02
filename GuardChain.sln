@@ -5,9 +5,13 @@ VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{44AF8281-C9A1-4971-9DF9-62A4BEF1EBB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuardChain", "src\GuardChain\GuardChain.csproj", "{F10ED253-F8A1-403C-8EF2-1195A4370D7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GuardChain", "src\GuardChain\GuardChain.csproj", "{F10ED253-F8A1-403C-8EF2-1195A4370D7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "src\Test\Test.csproj", "{6BC4B9A2-A188-400F-903E-F3D4AB1F1F63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "src\Test\Test.csproj", "{6BC4B9A2-A188-400F-903E-F3D4AB1F1F63}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{5DF591FB-C3E3-455C-B06F-C61B7DA86FD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuardChain.Tests", "test\GuardChain.Tests\GuardChain.Tests.csproj", "{DEFDFE2E-B27A-4D83-8E58-8C8DB62F3F85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +27,10 @@ Global
 		{6BC4B9A2-A188-400F-903E-F3D4AB1F1F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BC4B9A2-A188-400F-903E-F3D4AB1F1F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BC4B9A2-A188-400F-903E-F3D4AB1F1F63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEFDFE2E-B27A-4D83-8E58-8C8DB62F3F85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEFDFE2E-B27A-4D83-8E58-8C8DB62F3F85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEFDFE2E-B27A-4D83-8E58-8C8DB62F3F85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEFDFE2E-B27A-4D83-8E58-8C8DB62F3F85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F10ED253-F8A1-403C-8EF2-1195A4370D7B} = {44AF8281-C9A1-4971-9DF9-62A4BEF1EBB7}
 		{6BC4B9A2-A188-400F-903E-F3D4AB1F1F63} = {44AF8281-C9A1-4971-9DF9-62A4BEF1EBB7}
+		{DEFDFE2E-B27A-4D83-8E58-8C8DB62F3F85} = {5DF591FB-C3E3-455C-B06F-C61B7DA86FD2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {28CBF521-33E9-49F6-8EE3-40FF104A2853}

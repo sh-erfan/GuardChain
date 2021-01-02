@@ -34,6 +34,11 @@ namespace GuardChain.Extensions
             return Chain.Next(guard);
         }
 
+        public static IChainableGuardClause<string> NullOrWhiteSpace<TException>(this IGuardClause<string> guard, params object[] customExceptionArgs) where TException: Exception
+        {
+            return guard.NullOrWhiteSpace(typeof(TException), customExceptionArgs);
+        }
+
         #endregion
     }
 }
