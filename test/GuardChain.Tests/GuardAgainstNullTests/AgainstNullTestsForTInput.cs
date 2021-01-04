@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GuardChain.Tests.GuardAgainstNullTests
 {
-    public class MainMethodTests
+    public class AgainstNullTestsForTInput
     {
         public void DoesNothingGivenNonNullValue()
         {
