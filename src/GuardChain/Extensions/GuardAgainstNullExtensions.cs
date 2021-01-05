@@ -54,5 +54,26 @@ namespace GuardChain.Extensions
 
         #endregion
 
+        #region Object
+
+        public static IChainableGuardClause<object> Null(this IGuardClause<object> guard)
+        {
+            return guard.Null<object>();
+        }
+
+        public static IChainableGuardClause<object> Null(this IGuardClause<object> guard, Type customExceptionType, params object[] customExceptionArgs)
+        {
+            return guard.Null<object>(customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<object> Null<TException>(this IGuardClause<object> guard, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.Null<object>( typeof(TException), customExceptionArgs);
+        }
+
+
+        #endregion
+
+
     }
 }
