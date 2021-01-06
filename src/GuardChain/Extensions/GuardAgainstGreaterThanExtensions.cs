@@ -29,7 +29,7 @@ namespace GuardChain.Extensions
             return Chain.Next(guard);
         }
 
-        public static IChainableGuardClause<TInput> GreaterThan<TException, TInput>(this IGuardClause<TInput> guard, TInput limit, params object[] customExceptionArgs) where TInput : struct, IComparable where TException: Exception
+        public static IChainableGuardClause<TInput> GreaterThan<TException, TInput>(this IGuardClause<TInput> guard, TInput limit, params object[] customExceptionArgs) where TInput : struct, IComparable where TException : Exception
         {
             return guard.GreaterThan(limit, typeof(TException), customExceptionArgs);
         }
@@ -48,7 +48,7 @@ namespace GuardChain.Extensions
             return guard.GreaterThan<short>(limit, customExceptionType, customExceptionArgs);
         }
 
-        public static IChainableGuardClause<short> GreaterThan<TException>(this IGuardClause<short> guard, short limit, params object[] customExceptionArgs) where TException: Exception
+        public static IChainableGuardClause<short> GreaterThan<TException>(this IGuardClause<short> guard, short limit, params object[] customExceptionArgs) where TException : Exception
         {
             return guard.GreaterThan<short>(limit, typeof(TException), customExceptionArgs);
         }

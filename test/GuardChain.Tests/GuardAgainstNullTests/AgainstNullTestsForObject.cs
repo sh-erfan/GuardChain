@@ -3,6 +3,7 @@ using GuardChain.Utils;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using GuardChain.Tests.Data;
 using Xunit;
 
 namespace GuardChain.Tests.GuardAgainstNullTests
@@ -14,7 +15,7 @@ namespace GuardChain.Tests.GuardAgainstNullTests
         {
             var data = new TestData();
 
-            Guard.Protect(data.NonNullObject).Against.Null();
+            Guard.Protect(data.ObjectInput).Against.Null();
         }
 
         [Fact]
@@ -22,7 +23,7 @@ namespace GuardChain.Tests.GuardAgainstNullTests
         {
             var data = new TestData();
 
-            Assert.Throws<ArgumentNullException>(() => Guard.Protect(data.NullObject).Against.Null());
+            Assert.Throws<ArgumentNullException>(() => Guard.Protect(data.NullObjectInput).Against.Null());
         }
 
         [Fact]
@@ -30,7 +31,7 @@ namespace GuardChain.Tests.GuardAgainstNullTests
         {
             var data = new TestData();
 
-            Assert.Throws<MyCustomException>(() => Guard.Protect(data.NullObject).Against.Null<MyCustomException>());
+            Assert.Throws<MyCustomException>(() => Guard.Protect(data.NullObjectInput).Against.Null<MyCustomException>());
         }
 
         [Fact]
@@ -38,7 +39,7 @@ namespace GuardChain.Tests.GuardAgainstNullTests
         {
             var data = new TestData();
 
-            Assert.Throws<MyCustomException>(() => Guard.Protect(data.NullObject).Against.Null<MyCustomException>("arg1"));
+            Assert.Throws<MyCustomException>(() => Guard.Protect(data.NullObjectInput).Against.Null<MyCustomException>("arg1"));
         }
 
         [Fact]
@@ -46,7 +47,7 @@ namespace GuardChain.Tests.GuardAgainstNullTests
         {
             var data = new TestData();
 
-            Assert.Throws<MyCustomException>(() => Guard.Protect(data.NullObject).Against.Null(typeof(MyCustomException)));
+            Assert.Throws<MyCustomException>(() => Guard.Protect(data.NullObjectInput).Against.Null(typeof(MyCustomException)));
         }
 
         [Fact]
@@ -54,7 +55,7 @@ namespace GuardChain.Tests.GuardAgainstNullTests
         {
             var data = new TestData();
 
-            Assert.Throws<MyCustomException>(() => Guard.Protect(data.NullObject).Against.Null(typeof(MyCustomException), "arg1"));
+            Assert.Throws<MyCustomException>(() => Guard.Protect(data.NullObjectInput).Against.Null(typeof(MyCustomException), "arg1"));
         }
 
         [Fact]
@@ -62,7 +63,7 @@ namespace GuardChain.Tests.GuardAgainstNullTests
         {
             var data = new TestData();
 
-            Assert.Equal(data.NonNullObject, Guard.Protect(data.NonNullObject).Against.Null().Input);
+            Assert.Equal(data.ObjectInput, Guard.Protect(data.ObjectInput).Against.Null().Input);
         }
 
         [Fact]
@@ -70,7 +71,7 @@ namespace GuardChain.Tests.GuardAgainstNullTests
         {
             var data = new TestData();
 
-            Assert.Equal(data.NonNullObject, Guard.Protect(data.NonNullObject).Against.Null<MyCustomException>().Input);
+            Assert.Equal(data.ObjectInput, Guard.Protect(data.ObjectInput).Against.Null<MyCustomException>().Input);
         }
 
         [Fact]
@@ -78,7 +79,7 @@ namespace GuardChain.Tests.GuardAgainstNullTests
         {
             var data = new TestData();
 
-            Assert.Equal(data.NonNullObject, Guard.Protect(data.NonNullObject).Against.Null<MyCustomException>("arg1").Input);
+            Assert.Equal(data.ObjectInput, Guard.Protect(data.ObjectInput).Against.Null<MyCustomException>("arg1").Input);
         }
 
         [Fact]
@@ -86,7 +87,7 @@ namespace GuardChain.Tests.GuardAgainstNullTests
         {
             var data = new TestData();
 
-            Assert.Equal(data.NonNullObject, Guard.Protect(data.NonNullObject).Against.Null(typeof(MyCustomException)).Input);
+            Assert.Equal(data.ObjectInput, Guard.Protect(data.ObjectInput).Against.Null(typeof(MyCustomException)).Input);
         }
 
         [Fact]
@@ -94,30 +95,9 @@ namespace GuardChain.Tests.GuardAgainstNullTests
         {
             var data = new TestData();
 
-            Assert.Equal(data.NonNullObject, Guard.Protect(data.NonNullObject).Against.Null(typeof(MyCustomException), "arg1").Input);
+            Assert.Equal(data.ObjectInput, Guard.Protect(data.ObjectInput).Against.Null(typeof(MyCustomException), "arg1").Input);
         }
 
-        #region Data
-
-        class TestData
-        {
-            public object NullObject { get; } = null;
-            public object NonNullObject { get; } = new object();
-        }
-
-        class MyCustomException : Exception
-        {
-            public MyCustomException() : base()
-            {
-
-            }
-
-            public MyCustomException(string message) : base(message)
-            {
-
-            }
-        }
-
-        #endregion
+       
     }
 }
