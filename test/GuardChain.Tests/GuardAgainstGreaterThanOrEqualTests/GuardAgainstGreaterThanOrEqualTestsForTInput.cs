@@ -181,29 +181,5 @@ namespace GuardChain.Tests.GuardAgainstGreaterThanOrEqualTests
             Assert.Equal(data.EnumInputTwo, Guard.Protect(data.EnumInputTwo).Against.GreaterThanOrEqual<MyTestEnum>(MyTestEnum.Three).Input);
         }
 
-
-
-        #region Data
-
-        class TestData
-        {
-            public short ShortInput { get; } = 1;
-            public int IntInput { get; } = 1;
-            public long LongInput { get; } = 1;
-            public decimal DecimalInput { get; } = (decimal)1.0;
-            public float FloatInput { get; } = (float)1.0;
-            public double DoubleInput { get; } = 1.0;
-            public DateTime DateTimeInput { get; } = DateTime.Now;
-            public MyTestEnum EnumInputTwo { get; } = MyTestEnum.Two;
-            public Guid GuidInput { get; } = Guid.Empty;
-            public object ObjectInput { get; } = new object();
-            public object NullObjectInput { get; } = null;
-            public List<object> ListInput { get; } = new List<object>();
-        }
-
-
-
-
-        #endregion
     }
 }
