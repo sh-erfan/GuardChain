@@ -21,7 +21,7 @@ namespace GuardChain.Extensions
 
         public static IChainableGuardClause<TInput> Zero<TInput>(this IGuardClause<TInput> guard, Type customExceptionType, params object[] customExceptionArgs) where TInput : struct, IComparable
         {
-            if (guard.Input.CompareTo(default(TInput)) < 0)
+            if (Math.Abs(guard.Input.CompareTo(default(TInput))) == 0)
             {
                 Guard.ThrowCustomException(customExceptionType, customExceptionArgs);
             }

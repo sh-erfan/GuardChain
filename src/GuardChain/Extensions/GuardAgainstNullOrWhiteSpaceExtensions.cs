@@ -16,7 +16,7 @@ namespace GuardChain.Extensions
 
             if (string.IsNullOrWhiteSpace(guard.Input))
             {
-                throw new ArgumentException($"'{guard.InputParameterName}' string cannot be empty");
+                throw new ArgumentException($"'{guard.InputParameterName}' string cannot be all white spaces");
             }
 
             return Chain.Next(guard);

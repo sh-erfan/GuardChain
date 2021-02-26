@@ -11,5 +11,6 @@ namespace GuardChain.Models
         /// </summary>
         TInput Input { get; }
         string InputParameterName { get; }
+
     }
 }

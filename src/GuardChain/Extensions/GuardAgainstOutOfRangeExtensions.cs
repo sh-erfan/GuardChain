@@ -245,7 +245,7 @@ namespace GuardChain.Extensions
 
         #region Sql DateTime
 
-        public static IGuardClause<DateTime> OutOfSqlDateRange(this IGuardClause<DateTime> guard)
+        public static IChainableGuardClause<DateTime> OutOfSqlDateRange(this IGuardClause<DateTime> guard)
         {
             const long sqlMinDateTicks = 552877920000000000; // min date is 1/1/1753 in sql. Why? check https://stackoverflow.com/q/3310569/7565464 if you are curious like me
             const long sqlMaxDateTicks = 3155378975999970000;// max date is 12/31/9999 is sql
@@ -253,17 +253,20 @@ namespace GuardChain.Extensions
             return guard.OutOfRange<DateTime>(new DateTime(sqlMinDateTicks), new DateTime(sqlMaxDateTicks));
         }
 
-        public static IGuardClause<DateTime> OutOfSqlDateRange(this IGuardClause<DateTime> guard, Type customExceptionType, params object[] customExceptionArgs)
+        public static IChainableGuardClause<DateTime> OutOfSqlDateRange(this IGuardClause<DateTime> guard, Type customExceptionType, params object[] customExceptionArgs)
         {
-            const long sqlMinDateTicks = 552877920000000000; // min date is 1/1/1753 in sql. Why? check https://stackoverflow.com/q/3310569/7565464 if you are curious like me
-            const long sqlMaxDateTicks = 3155378975999970000;// max date is 12/31/9999 is sql
+            const long sqlMinDateTicks = 552877920000000000; 
+            const long sqlMaxDateTicks = 3155378975999970000;
 
             return guard.OutOfRange<DateTime>(new DateTime(sqlMinDateTicks), new DateTime(sqlMaxDateTicks), customExceptionType, customExceptionArgs);
         }
 
-        public static IChainableGuardClause<DateTime> OutOfSqlDateRange<TException>(this IGuardClause<DateTime> guard, DateTime rangeFrom, DateTime rangeTo, params object[] customExceptionArgs) where TException : Exception
+        public static IChainableGuardClause<DateTime> OutOfSqlDateRange<TException>(this IGuardClause<DateTime> guard, params object[] customExceptionArgs) where TException : Exception
         {
-            return guard.OutOfRange<DateTime>(rangeFrom, rangeTo, typeof(TException), customExceptionArgs);
+            const long sqlMinDateTicks = 552877920000000000; 
+            const long sqlMaxDateTicks = 3155378975999970000;
+
+            return guard.OutOfRange<DateTime>(new DateTime(sqlMinDateTicks), new DateTime(sqlMaxDateTicks), typeof(TException), customExceptionArgs);
         }
 
         #endregion

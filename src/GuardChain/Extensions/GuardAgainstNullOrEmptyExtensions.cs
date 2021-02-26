@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -77,7 +78,7 @@ namespace GuardChain.Extensions
 
         #region IEnumerable<TInput>
 
-        public static IChainableGuardClause<IEnumerable<TInput>> NullOrEmpty<TInput>(this IGuardClause<IEnumerable<TInput>> guard)
+        public static IChainableGuardClause<IEnumerable<dynamic>> NullOrEmpty(this IGuardClause<IEnumerable<dynamic>> guard)
         {
             guard.Null();
 
@@ -89,7 +90,7 @@ namespace GuardChain.Extensions
             return Chain.Next(guard);
         }
 
-        public static IChainableGuardClause<IEnumerable<TInput>> NullOrEmpty<TInput>(this IGuardClause<IEnumerable<TInput>> guard, Type customExceptionType, params object[] customExceptionArgs)
+        public static IChainableGuardClause<IEnumerable<dynamic>> NullOrEmpty(this IGuardClause<IEnumerable<dynamic>> guard, Type customExceptionType, params object[] customExceptionArgs)
         {
             guard.Null(customExceptionType, customExceptionArgs);
 
@@ -101,7 +102,7 @@ namespace GuardChain.Extensions
             return Chain.Next(guard);
         }
 
-        public static IChainableGuardClause<IEnumerable<TInput>> NullOrEmpty<TException, TInput>(this IGuardClause<IEnumerable<TInput>> guard, params object[] customExceptionArgs) where TException : Exception
+        public static IChainableGuardClause<IEnumerable<dynamic>> NullOrEmpty<TException>(this IGuardClause<IEnumerable<dynamic>> guard, params object[] customExceptionArgs) where TException : Exception
         {
             return guard.NullOrEmpty(typeof(TException), customExceptionArgs);
         }

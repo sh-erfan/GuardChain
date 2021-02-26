@@ -149,5 +149,24 @@ namespace GuardChain.Extensions
         }
 
         #endregion
+
+        #region DateTime
+
+        public static IChainableGuardClause<DateTime> LessThan(this IGuardClause<DateTime> guard, DateTime limit)
+        {
+            return guard.LessThan<DateTime>(limit);
+        }
+
+        public static IChainableGuardClause<DateTime> LessThan(this IGuardClause<DateTime> guard, DateTime limit, Type customExceptionType, params object[] customExceptionArgs)
+        {
+            return guard.LessThan<DateTime>(limit, customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<DateTime> LessThan<TException>(this IGuardClause<DateTime> guard, DateTime limit, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.LessThan<DateTime>(limit, typeof(TException), customExceptionArgs);
+        }
+
+        #endregion
     }
 }

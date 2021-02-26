@@ -112,6 +112,25 @@ namespace GuardChain.Extensions
 
         #endregion
 
+        #region float 
+
+        public static IChainableGuardClause<float> GreaterThanOrEqual(this IGuardClause<float> guard, float limit)
+        {
+            return guard.GreaterThanOrEqual<float>(limit);
+        }
+
+        public static IChainableGuardClause<float> GreaterThanOrEqual(this IGuardClause<float> guard, float limit, Type customExceptionType, params object[] customExceptionArgs)
+        {
+            return guard.GreaterThanOrEqual<float>(limit, customExceptionType, customExceptionArgs);
+        }
+
+        public static IChainableGuardClause<float> GreaterThanOrEqual<TException>(this IGuardClause<float> guard, float limit, params object[] customExceptionArgs) where TException : Exception
+        {
+            return guard.GreaterThanOrEqual<float>(limit, typeof(TException), customExceptionArgs);
+        }
+
+        #endregion
+
         #region double 
 
         public static IChainableGuardClause<double> GreaterThanOrEqual(this IGuardClause<double> guard, double limit)
@@ -131,24 +150,25 @@ namespace GuardChain.Extensions
 
         #endregion
 
-        #region float 
+        #region DateTime
 
-        public static IChainableGuardClause<float> GreaterThanOrEqual(this IGuardClause<float> guard, float limit)
+        public static IChainableGuardClause<DateTime> GreaterThanOrEqual(this IGuardClause<DateTime> guard, DateTime limit)
         {
-            return guard.GreaterThanOrEqual<float>(limit);
+            return guard.GreaterThanOrEqual<DateTime>(limit);
         }
 
-        public static IChainableGuardClause<float> GreaterThanOrEqual(this IGuardClause<float> guard, float limit, Type customExceptionType, params object[] customExceptionArgs)
+        public static IChainableGuardClause<DateTime> GreaterThanOrEqual(this IGuardClause<DateTime> guard, DateTime limit, Type customExceptionType, params object[] customExceptionArgs)
         {
-            return guard.GreaterThanOrEqual<float>(limit, customExceptionType, customExceptionArgs);
+            return guard.GreaterThanOrEqual<DateTime>(limit, customExceptionType, customExceptionArgs);
         }
 
-        public static IChainableGuardClause<float> GreaterThanOrEqual<TException>(this IGuardClause<float> guard, float limit, params object[] customExceptionArgs) where TException : Exception
+        public static IChainableGuardClause<DateTime> GreaterThanOrEqual<TException>(this IGuardClause<DateTime> guard, DateTime limit, params object[] customExceptionArgs) where TException : Exception
         {
-            return guard.GreaterThanOrEqual<float>(limit, typeof(TException), customExceptionArgs);
+            return guard.GreaterThanOrEqual<DateTime>(limit, typeof(TException), customExceptionArgs);
         }
 
         #endregion
+
     }
 }
 

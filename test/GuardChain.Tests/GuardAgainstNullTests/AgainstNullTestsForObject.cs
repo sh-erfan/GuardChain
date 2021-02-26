@@ -23,7 +23,7 @@ namespace GuardChain.Tests.GuardAgainstNullTests
         {
             var data = new TestData();
 
-            Assert.Throws<ArgumentNullException>(() => Guard.Protect(data.NullObjectInput).Against.Null());
+            Assert.Throws<ArgumentNullException>(() => Guard.Protect(data.ObjectInputWithValueNull).Against.Null());
         }
 
         [Fact]
@@ -31,7 +31,7 @@ namespace GuardChain.Tests.GuardAgainstNullTests
         {
             var data = new TestData();
 
-            Assert.Throws<MyCustomException>(() => Guard.Protect(data.NullObjectInput).Against.Null<MyCustomException>());
+            Assert.Throws<MyCustomException>(() => Guard.Protect(data.ObjectInputWithValueNull).Against.Null<MyCustomException>());
         }
 
         [Fact]
@@ -39,7 +39,7 @@ namespace GuardChain.Tests.GuardAgainstNullTests
         {
             var data = new TestData();
 
-            Assert.Throws<MyCustomException>(() => Guard.Protect(data.NullObjectInput).Against.Null<MyCustomException>("arg1"));
+            Assert.Throws<MyCustomException>(() => Guard.Protect(data.ObjectInputWithValueNull).Against.Null<MyCustomException>("arg1"));
         }
 
         [Fact]
@@ -47,7 +47,7 @@ namespace GuardChain.Tests.GuardAgainstNullTests
         {
             var data = new TestData();
 
-            Assert.Throws<MyCustomException>(() => Guard.Protect(data.NullObjectInput).Against.Null(typeof(MyCustomException)));
+            Assert.Throws<MyCustomException>(() => Guard.Protect(data.ObjectInputWithValueNull).Against.Null(typeof(MyCustomException)));
         }
 
         [Fact]
@@ -55,7 +55,7 @@ namespace GuardChain.Tests.GuardAgainstNullTests
         {
             var data = new TestData();
 
-            Assert.Throws<MyCustomException>(() => Guard.Protect(data.NullObjectInput).Against.Null(typeof(MyCustomException), "arg1"));
+            Assert.Throws<MyCustomException>(() => Guard.Protect(data.ObjectInputWithValueNull).Against.Null(typeof(MyCustomException), "arg1"));
         }
 
         [Fact]
