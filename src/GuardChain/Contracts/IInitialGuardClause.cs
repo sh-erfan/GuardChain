@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GuardChain.Models
+namespace GuardChain.Contracts
 {
-   public interface IInitialGuardClause<out TInput>
+    public interface IInitialGuardClause<out TInput>
     {
         IGuardClause<TInput> Against { get; }
     }

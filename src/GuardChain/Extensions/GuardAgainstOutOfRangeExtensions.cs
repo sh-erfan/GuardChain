@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.Serialization;
 using System.Text;
-using GuardChain.Models;
+using GuardChain.Contracts;
 using GuardChain.Utils;
 
 namespace GuardChain.Extensions

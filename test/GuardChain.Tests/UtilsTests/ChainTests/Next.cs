@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using GuardChain.Contracts;
 using GuardChain.Models;
 using GuardChain.Tests.Data;
 using GuardChain.Utils;

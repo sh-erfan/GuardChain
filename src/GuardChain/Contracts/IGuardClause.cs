@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GuardChain.Models
+namespace GuardChain.Contracts
 {
     public interface IGuardClause<out TInput>
     {

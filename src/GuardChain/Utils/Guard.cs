@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using GuardChain.Contracts;
 using GuardChain.Exceptions;
 using GuardChain.Models;
 

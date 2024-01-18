@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using GuardChain.Models;
+using GuardChain.Contracts;
 using GuardChain.Utils;
 
 namespace GuardChain.Extensions
