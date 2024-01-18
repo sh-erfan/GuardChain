@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "GuardChain.Tests": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

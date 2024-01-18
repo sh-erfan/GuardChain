@@ -5,14 +5,16 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{726BDA5E-4910-4169-8515-4A8F55D49BBB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{73C2667E-33EA-49FF-8F3B-E929C22DC71B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{73C2667E-33EA-49FF-8F3B-E929C22DC71B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GuardChain", "src\GuardChain.csproj", "{D9F3144E-F261-42D6-9975-CA717061C86E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GuardChain.Tests", "test\GuardChain.Tests.csproj", "{9209562D-A6A1-48E7-BB29-C7227CBCC8D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GuardChain.Tests", "tests\GuardChain.Tests.csproj", "{9209562D-A6A1-48E7-BB29-C7227CBCC8D6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5C9E8C09-57ED-4A2C-9607-C4EBE8A8E0FC}"
 	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		compose.yaml = compose.yaml
 		Dockerfile = Dockerfile
 	EndProjectSection
 EndProject
