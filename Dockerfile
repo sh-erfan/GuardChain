@@ -1,16 +1,16 @@
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS build
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /app
 
-COPY . .
+COPY ./tests .
+COPY ./src /src
 
 
 # Restore dependencies
-RUN dotnet restore src/GuardChain.csproj && \
-	dotnet restore tests/GuardChain.Tests.csproj
+RUN dotnet restore GuardChain.Tests.csproj
 
 
 # Build test project
-RUN dotnet build -c Release -o out tests/GuardChain.Tests.csproj
+RUN dotnet build -c Release -o out GuardChain.Tests.csproj
 
 CMD ["dotnet", "test"]
